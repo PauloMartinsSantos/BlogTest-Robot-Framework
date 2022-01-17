@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20220117 15:16:47.427" rpa="false" schemaversion="2">
+<suite id="s1" name="BlogTest" source="C:\RobotFramework\QArentenaBlogTest\BlogTest.robot">
+<test id="s1-t1" name="Caso de teste 01: Pesquisar um post">
+<kw name="Acessar a página do blog" library="ResourceBlogTest" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220117 15:16:48.198" level="INFO">Opening browser 'chrome' to base url 'http://robotizandotestes.blogspot.com/'.</msg>
+<status status="PASS" starttime="20220117 15:16:48.197" endtime="20220117 15:16:55.540"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Robotizando Testes</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220117 15:16:55.546" level="INFO">Page title is 'Robotizando Testes'.</msg>
+<status status="PASS" starttime="20220117 15:16:55.540" endtime="20220117 15:16:55.546"/>
+</kw>
+<status status="PASS" starttime="20220117 15:16:48.196" endtime="20220117 15:16:55.547"/>
+</kw>
+<kw name="Pesquisar um post contendo &quot;Season Premiere: Introdução ao Robot Framework&quot;" library="ResourceBlogTest" sourcename="Pesquisar um post contendo &quot;${TEXTO_PESQUISA}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${BTN_PESQUISAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220117 15:16:55.548" endtime="20220117 15:16:55.608"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_PESQUISAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220117 15:16:55.609" level="INFO">Clicking button 'css=button.search-expand.touch-icon-button'.</msg>
+<status status="PASS" starttime="20220117 15:16:55.608" endtime="20220117 15:16:55.812"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISAR}</arg>
+<arg>${TEXTO_PESQUISA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220117 15:16:55.815" level="INFO">Typing text 'Season Premiere: Introdução ao Robot Framework' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20220117 15:16:55.813" endtime="20220117 15:16:56.450"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SUBMIT_PESQUISAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220117 15:16:56.451" endtime="20220117 15:16:56.539"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SUBMIT_PESQUISAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220117 15:16:56.544" level="INFO">Clicking element 'css=input.search-action.flat-button'.</msg>
+<status status="PASS" starttime="20220117 15:16:56.541" endtime="20220117 15:16:59.263"/>
+</kw>
+<status status="PASS" starttime="20220117 15:16:55.548" endtime="20220117 15:16:59.263"/>
+</kw>
+<kw name="Conferir mensagem de pesquisa &quot;Mostrando postagens que correspondem à pesquisa por Season Premiere: Introdução ao Robot Framework&quot;" library="ResourceBlogTest" sourcename="Conferir mensagem de pesquisa &quot;${MSG_DESEJADA}&quot;">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>text=${MSG_DESEJADA}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220117 15:16:59.357" level="INFO">Current page contains text 'Mostrando postagens que correspondem à pesquisa por Season Premiere: Introdução ao Robot Framework'.</msg>
+<status status="PASS" starttime="20220117 15:16:59.274" endtime="20220117 15:16:59.357"/>
+</kw>
+<status status="PASS" starttime="20220117 15:16:59.265" endtime="20220117 15:16:59.358"/>
+</kw>
+<kw name="Fechar Navegador" library="ResourceBlogTest" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220117 15:16:59.361" endtime="20220117 15:17:02.377"/>
+</kw>
+<status status="PASS" starttime="20220117 15:16:59.360" endtime="20220117 15:17:02.378"/>
+</kw>
+<status status="PASS" starttime="20220117 15:16:48.195" endtime="20220117 15:17:02.380"/>
+</test>
+<test id="s1-t2" name="Caso de teste 02: Ler um post">
+<kw name="Acessar a página do blog" library="ResourceBlogTest" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220117 15:17:02.391" level="INFO">Opening browser 'chrome' to base url 'http://robotizandotestes.blogspot.com/'.</msg>
+<status status="PASS" starttime="20220117 15:17:02.389" endtime="20220117 15:17:09.747"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Robotizando Testes</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220117 15:17:09.756" level="INFO">Page title is 'Robotizando Testes'.</msg>
+<status status="PASS" starttime="20220117 15:17:09.747" endtime="20220117 15:17:09.756"/>
+</kw>
+<status status="PASS" starttime="20220117 15:17:02.387" endtime="20220117 15:17:09.757"/>
+</kw>
+<kw name="Acessar o post &quot;Season Premiere: Introdução ao Robot Framework&quot;" library="ResourceBlogTest" sourcename="Acessar o post &quot;${TEXTO_PESQUISA}&quot;">
+<kw name="Pesquisar um post contendo &quot;${TEXTO_PESQUISA}&quot;" library="ResourceBlogTest" sourcename="Pesquisar um post contendo &quot;${TEXTO_PESQUISA}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${BTN_PESQUISAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220117 15:17:09.758" endtime="20220117 15:17:09.795"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_PESQUISAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220117 15:17:09.800" level="INFO">Clicking button 'css=button.search-expand.touch-icon-button'.</msg>
+<status status="PASS" starttime="20220117 15:17:09.796" endtime="20220117 15:17:10.016"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_PESQUISAR}</arg>
+<arg>${TEXTO_PESQUISA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220117 15:17:10.019" level="INFO">Typing text 'Season Premiere: Introdução ao Robot Framework' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20220117 15:17:10.017" endtime="20220117 15:17:10.628"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SUBMIT_PESQUISAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220117 15:17:10.629" endtime="20220117 15:17:10.719"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SUBMIT_PESQUISAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220117 15:17:10.721" level="INFO">Clicking element 'css=input.search-action.flat-button'.</msg>
+<status status="PASS" starttime="20220117 15:17:10.720" endtime="20220117 15:17:12.820"/>
+</kw>
+<status status="PASS" starttime="20220117 15:17:09.758" endtime="20220117 15:17:12.821"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_POST}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220117 15:17:12.821" level="INFO">Clicking link 'xpath=//a[contains(text(),'Season Premiere: Introdução ao Robot Framework')]'.</msg>
+<status status="PASS" starttime="20220117 15:17:12.821" endtime="20220117 15:17:14.690"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>O que é Robot Framework?</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220117 15:17:14.691" endtime="20220117 15:17:14.718"/>
+</kw>
+<status status="PASS" starttime="20220117 15:17:09.757" endtime="20220117 15:17:14.718"/>
+</kw>
+<kw name="Conferir se a imagem do robô é exibida" library="ResourceBlogTest">
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${IMG_ROBO}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220117 15:17:14.749" level="INFO">Current page contains image 'xpath=//img[contains(@src, 'if_Robot_18_385830_grande')]'.</msg>
+<status status="PASS" starttime="20220117 15:17:14.720" endtime="20220117 15:17:14.749"/>
+</kw>
+<status status="PASS" starttime="20220117 15:17:14.719" endtime="20220117 15:17:14.749"/>
+</kw>
+<kw name="Conferir no post se o texto &quot;nesse post vou apresentar-lhes o astro deste blog:&quot; é exibido" library="ResourceBlogTest" sourcename="Conferir no post se o texto &quot;${TEXTO_DESEJADO}&quot; é exibido">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>text=${TEXTO_DESEJADO}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220117 15:17:14.792" level="INFO">Current page contains text 'nesse post vou apresentar-lhes o astro deste blog:'.</msg>
+<status status="PASS" starttime="20220117 15:17:14.751" endtime="20220117 15:17:14.792"/>
+</kw>
+<status status="PASS" starttime="20220117 15:17:14.750" endtime="20220117 15:17:14.792"/>
+</kw>
+<kw name="Fechar Navegador" library="ResourceBlogTest" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220117 15:17:14.794" endtime="20220117 15:17:17.601"/>
+</kw>
+<status status="PASS" starttime="20220117 15:17:14.793" endtime="20220117 15:17:17.602"/>
+</kw>
+<status status="PASS" starttime="20220117 15:17:02.385" endtime="20220117 15:17:17.604"/>
+</test>
+<status status="PASS" starttime="20220117 15:16:47.431" endtime="20220117 15:17:17.611"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="BlogTest">BlogTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
